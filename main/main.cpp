@@ -15,7 +15,7 @@ extern "C" void app_main(void)
     Base_Init_uart0(); // 初始化串口0
     while (true)
     {
-        if (hlw8032.getVoltageAndCurrent(&volTage, &current, &power) == HLW8032_Obj::Status_t::OK)
+        if (hlw8032.getVoltageCurrentAndPower(&volTage, &current, &power) == HLW8032_Obj::Status_t::OK)
         {
             printf("vol : %.2f, Current : %.2f, Power : %.2f\n", volTage, current, power);
         }

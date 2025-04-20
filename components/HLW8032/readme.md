@@ -61,10 +61,10 @@ void uart_isr_callback(uint8_t *rx_data)
 
 ```cpp
 uint32_t voltageRaw, currentRaw, powerRaw;
-hlw.getVoltageAndCurrent(&voltageRaw, &currentRaw, &powerRaw);
+hlw.getVoltageCurrentAndPower(&voltageRaw, &currentRaw, &powerRaw);
 
 float voltage, current, power;
-hlw.getVoltageAndCurrent(&voltage, &current, &power);
+hlw.getVoltageCurrentAndPower(&voltage, &current, &power);
 ```
 
 ---
@@ -75,11 +75,11 @@ hlw.getVoltageAndCurrent(&voltage, &current, &power);
 
 初始化 HLW8032，设置电压/电流系数。
 
-### 📄 `Status_t getVoltageAndCurrent(uint32_t*, uint32_t*, uint32_t*)`
+### 📄 `Status_t getVoltageCurrentAndPower(uint32_t*, uint32_t*, uint32_t*)`
 
 获取原始 ADC 数值（未换算）。
 
-### 📄 `Status_t getVoltageAndCurrent(float*, float*, float*)`
+### 📄 `Status_t getVoltageCurrentAndPower(float*, float*, float*)`
 
 获取已乘以系数后的真实物理量（单位 V / A / W）。
 
@@ -123,7 +123,7 @@ hlw.begin(1.23f, 0.98f);
 
 while (1) {
     float v, i, p;
-    if (hlw.getVoltageAndCurrent(&v, &i, &p) == HLW8032_Obj::Status_t::OK) {
+    if (hlw.getVoltageCurrentAndPower(&v, &i, &p) == HLW8032_Obj::Status_t::OK) {
         printf("Voltage: %.2f V, Current: %.2f A, Power: %.2f W\n", v, i, p);
     }
     vTaskDelay(pdMS_TO_TICKS(1000));

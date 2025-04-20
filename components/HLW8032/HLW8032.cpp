@@ -71,7 +71,7 @@ HLW8032_Obj::Status_t HLW8032_Obj::CheckSum(uint8_t *data)
     return Status_t::OK;
 }
 
-HLW8032_Obj::Status_t HLW8032_Obj::getVoltageAndCurrent(uint32_t *Voltage_buffer, uint32_t *Current_buffer, uint32_t *Power_buffer)
+HLW8032_Obj::Status_t HLW8032_Obj::getVoltageCurrentAndPower(uint32_t *Voltage_buffer, uint32_t *Current_buffer, uint32_t *Power_buffer)
 {
     if (this->DRDY == false)
     {
@@ -118,7 +118,7 @@ HLW8032_Obj::Status_t HLW8032_Obj::getVoltageAndCurrent(uint32_t *Voltage_buffer
     return Status_t::OK;
 }
 
-HLW8032_Obj::Status_t HLW8032_Obj::getVoltageAndCurrent(float *Voltage_buffer, float *Current_buffer, float *Power_buffer)
+HLW8032_Obj::Status_t HLW8032_Obj::getVoltageCurrentAndPower(float *Voltage_buffer, float *Current_buffer, float *Power_buffer)
 {
     if (this->DRDY == false)
     {

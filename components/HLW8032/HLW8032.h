@@ -92,22 +92,22 @@ public:
      */
     Status_t begin();
     /**
-     * @brief 获取电压电流ADC原始值
+     * @brief 获取电压电流以及功率ADC原始值
      *
      * @param Voltage_buffer 电压buffer地址，uint32_t 类型
      * @param Current_buffer 电流buffer地址，uint32_t 类型
      * @return Status_t 操作状态
      */
-    Status_t getVoltageAndCurrent(uint32_t *Voltage_buffer, uint32_t *Current_buffer, uint32_t *Power_buffer);
+    Status_t getVoltageCurrentAndPower(uint32_t *Voltage_buffer, uint32_t *Current_buffer, uint32_t *Power_buffer);
 
     /**
-     * @brief 获取计算后的电压电流值
+     * @brief 获取计算后的电压电流以及功率值
      *
      * @param Voltage_buffer 电压buffer地址，float 类型
      * @param Current_buffer 电流buffer地址，float 类型
      * @return Status_t 操作状态
      */
-    Status_t getVoltageAndCurrent(float *Voltage_buffer, float *Current_buffer, float *Power_buffer);
+    Status_t getVoltageCurrentAndPower(float *Voltage_buffer, float *Current_buffer, float *Power_buffer);
 
     /**
      * @brief 串口中断回调，放在串口回调中
