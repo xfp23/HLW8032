@@ -1,4 +1,4 @@
-idf_component_register(SRCS "flag.cpp" "main.cpp" "Useruart.cpp"
+idf_component_register(SRCS "main.cpp" "Useruart.cpp"
                     INCLUDE_DIRS "."
                     REQUIRES HLW8032)
 

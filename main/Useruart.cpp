@@ -1,6 +1,9 @@
 
 #include "Useruart.h"
-#include "flag.h"
+#include "HLW8032.h"
+
+
+extern HLW8032_Obj hlw8032;
 
 #define UART0_TX_BUFF_SIZE (128) // uart 缓冲区大小
 #define UART0_PATTERN_CHR_NUM (3) // 连续接收触发中断的字符数
